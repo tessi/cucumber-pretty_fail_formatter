@@ -79,6 +79,7 @@ module Cucumber
       private
 
       def print_summary(features)
+        reset_io
         print_steps(:pending)
         print_steps(:failed)
         print_stats(features, @options)
@@ -102,7 +103,7 @@ module Cucumber
         if %i(failed undefined).include?(status)
           @output.puts
           @output.print(@io.string)
-          @io.string = ''
+          reset_io
           @output.puts
         end
         @output.flush
@@ -110,6 +111,10 @@ module Cucumber
 
       def table_header_cell?(status)
         status == :skipped_param
+      end
+
+      def reset_io
+        @io.string = ''
       end
 
     end
