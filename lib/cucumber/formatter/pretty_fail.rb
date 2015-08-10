@@ -103,9 +103,9 @@ module Cucumber
         if %i(failed undefined).include?(status)
           @output.puts
           @output.print(@io.string)
-          reset_io
           @output.puts
         end
+        reset_io
         @output.flush
       end
 
