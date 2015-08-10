@@ -1,7 +1,7 @@
 # Pretty Fail Formatter
 
 A cucumber formatter which is concise on success and pretty on failures. It behaves like the standard `progress` formatter, printing only nice green dots.
-Except when a cuke failes, then it prints this one cuke as the standard `pretty` formatter does.
+Except when a cuke failes, then it prints the failing cuke verbosely, so that you instantly see what's wrong.
 
     bundle exec cucumber --format pretty-fail
     .....F
@@ -31,7 +31,7 @@ Put it in your `Gemfile`
 
     gem 'cucumber-pretty_fail_formatter'
 
-run `bundle install`
+Run `bundle install`
 
 If you don't user Bundler you can install it using the `gem` command:
 
@@ -48,12 +48,10 @@ If you want to use it as your default formatter, simply put the option in your `
 ## Contributing
 
  * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
- * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+ * Check out the github issues to make sure someone already hasn't requested it and/or contributed it
  * Fork the project
  * Start a feature/bugfix branch
  * Commit and push until you are happy with your contribution
- * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
- * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 ## Copyright
 
