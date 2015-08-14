@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = "cucumber-pretty_fail_formatter"
-  s.version       = '0.0.2'
+  s.version       = '0.0.3'
   s.platform      = Gem::Platform::RUBY
   s.authors       = ["Philipp Tessenow"]
   s.email         = ["philipp@tessenow.org"]
