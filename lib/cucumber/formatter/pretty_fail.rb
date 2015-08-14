@@ -36,6 +36,7 @@ module Cucumber
 
       def after_feature_element(*args)
         super
+        reset_io
         progress(:failed) if (defined? @exception_raised) and (@exception_raised)
         @exception_raised = false
       end
@@ -105,7 +106,6 @@ module Cucumber
           @output.print(@io.string)
           @output.puts
         end
-        reset_io
         @output.flush
       end
 
