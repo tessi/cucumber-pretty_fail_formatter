@@ -36,13 +36,13 @@ module Cucumber
 
       def after_feature_element(*args)
         super
-        reset_io
-        progress(:failed) if (defined? @exception_raised) and (@exception_raised)
+        print_io if exception_raised?
         @exception_raised = false
+        reset_io
       end
 
       def before_steps(*args)
-        progress(:failed) if (defined? @exception_raised) and (@exception_raised)
+        progress(:failed) if exception_raised?
         @exception_raised = false
       end
 
@@ -102,10 +102,19 @@ module Cucumber
         char = CHARS[status]
         @output.print(format_string(char, status))
         if %i(failed undefined).include?(status)
-          @output.puts
-          @output.print(@io.string)
-          @output.puts
+          print_io
         end
+        @output.flush
+      end
+
+      def exception_raised?
+        defined?(@exception_raised) && @exception_raised
+      end
+
+      def print_io
+        @output.puts
+        @output.print(@io.string)
+        @output.puts
         @output.flush
       end
 
