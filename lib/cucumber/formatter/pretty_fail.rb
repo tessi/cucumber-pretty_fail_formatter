@@ -12,7 +12,7 @@ module Cucumber
     # The formatter used for <tt>--format pretty-fail</tt>
     class PrettyFail < Cucumber::Formatter::Pretty
       def initialize(runtime, path_or_io, options)
-        @runtime, @output, @options = runtime, ensure_io(path_or_io, "pretty-fail"), options
+        @runtime, @output, @options = runtime, ensure_io(path_or_io), options
         @io = StringIO.new # the fake io for the pretty formatter we inherit from
         @snippets_input = []
         @previous_step_keyword = nil

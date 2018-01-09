@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = "cucumber-pretty_fail_formatter"
-  s.version       = '0.0.4'
+  s.version       = '0.0.5'
   s.platform      = Gem::Platform::RUBY
   s.authors       = ["Philipp Tessenow"]
   s.email         = ["philipp@tessenow.org"]
@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency 'cucumber', ["~> 1.3.0"]
+  s.add_dependency 'cucumber', ["~> 2.1"]
 end
